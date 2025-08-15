@@ -1,0 +1,727 @@
+/* Ресет стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основні кольори */
+:root {
+    --fknt-red: #d10c0c;
+    --fknt-light: #fff5f5;
+    --fknt-dark: #300000;
+    --light: #ffffff;
+    --shadow: rgba(209, 12, 12, 0.3);
+}
+
+/* Фон для секцій */
+.bg-fknt-red {
+    background-color: var(--fknt-red);
+}
+
+.bg-fknt-dark {
+    background-color: var(--fknt-dark);
+}
+
+.bg-fknt-light {
+    background-color: var(--fknt-light);
+}
+
+/* Шапка */
+.header-fixed {
+    background-color: #000000 !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-nav .contact-link {
+    color: var(--light);
+    font-weight: 600;
+    position: relative;
+    padding-right: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .contact-link:hover,
+.navbar-nav .contact-link.active {
+    color: var(--light);
+    background-color: var(--fknt-red);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+/* Логотип */
+.logo {
+    height: 70px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Головний логотип організацій */
+.org-main-logo {
+    max-width: 150px;
+    margin: 0 auto 20px;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.org-main-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Герой-секція */
+.hero {
+    background: #000000;
+    background: linear-gradient(135deg, #000000, #1a0000, var(--fknt-red), var(--fknt-dark));
+    background-size: 150% 150%;
+    animation: gradientMove 8s ease infinite;
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background-attachment: fixed;
+}
+
+/* Анімація тексту */
+.animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Іконка літака в заголовку */
+.plane-icon {
+    height: 1.2em;
+    vertical-align: middle;
+    margin-left: 0.2em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.plane-icon:hover {
+    transform: rotate(45deg) scale(1.2);
+}
+
+/* Заголовки */
+h1, h2, h5 {
+    color: var(--fknt-red);
+    text-shadow: 2px 2px 4px var(--shadow);
+    font-weight: 700;
+}
+
+/* Текст */
+.text-fknt-red {
+    color: var(--fknt-red);
+    text-shadow: 1px 1px 2px var(--shadow);
+}
+
+.info-text {
+    color: #000000;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.learning-text {
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
+
+/* Гіперпосилання в тексті */
+.hyperlink {
+    color: var(--fknt-red);
+    font-style: italic;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hyperlink:hover {
+    background-color: var(--fknt-light);
+    border-radius: 3px;
+}
+
+/* Кнопки */
+.btn-fknt-red {
+    background-color: var(--fknt-red);
+    border-color: var(--fknt-red);
+    color: var(--light);
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-fknt-red:hover {
+    background-color: var(--light);
+    color: var(--fknt-red);
+    box-shadow: 0 4px 12px var(--shadow);
+    transform: scale(1.05);
+}
+
+.btn-outline-fknt-red {
+    border: 2px solid var(--fknt-red);
+    color: var(--fknt-red);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-fknt-red:hover {
+    background-color: var(--fknt-red);
+    color: var(--light);
+    box-shadow: 0 4px 12px var(--shadow);
+    transform: scale(1.05);
+}
+
+/* Ефект блиску для кнопок */
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+}
+
+.shine-effect:hover::before {
+    left: 150%;
+}
+
+.btn-learning {
+    font-size: 1.4rem;
+}
+
+/* Картки */
+.fknt-card {
+    border: 2px solid var(--fknt-red);
+    border-radius: 20px;
+    background-color: var(--light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fknt-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px var(--shadow);
+}
+
+/* Картки FAQ */
+.faq-card {
+    border: 2px dashed var(--fknt-red);
+    background-color: var(--fknt-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.1s ease;
+    min-height: 200px;
+    padding: 20px;
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow);
+    background-color: var(--light);
+}
+
+.faq-card .card-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.faq-card .card-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Логотипи організацій */
+.org-logo {
+    max-width: 100px;
+    margin: 10px; /* Відступи з усіх боків */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    float: left; /* Логотип ліворуч */
+    shape-outside: inset(0); /* Обтікання за контуром зображення */
+}
+
+.org-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Зображення організацій */
+.org-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
+
+.org-image:hover {
+    transform: scale(1.03);
+}
+
+/* Акордеон */
+.fknt-accordion {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fknt-accordion .accordion-item {
+    background-color: transparent;
+    border: 2px solid var(--fknt-red);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fknt-accordion .accordion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+.fknt-accordion .accordion-button {
+    background: var(--light);
+    color: var(--fknt-red);
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 12px 20px;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.fknt-accordion .accordion-button:not(.collapsed) {
+    background: var(--fknt-red);
+    color: var(--light);
+    border-radius: 12px 12px 0 0;
+}
+
+.fknt-accordion .accordion-button:hover {
+    box-shadow: 0 4px 12px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.fknt-accordion .accordion-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(209, 12, 12, 0.2);
+}
+
+.fknt-accordion .accordion-button::after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 15.5l-6-6 1.41-1.41L12 12.67l4.59-4.58L18 9.5l-6 6z"/></svg>');
+    background-size: contain;
+    width: 1.5em;
+    height: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.fknt-accordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+.fknt-accordion .accordion-body {
+    background: var(--fknt-light);
+    border-radius: 0 0 12px 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Формула та примітки */
+.fknt-formula {
+    background-color: var(--fknt-light);
+    border: 2px dashed var(--fknt-red);
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.fknt-formula:hover {
+    transform: scale(1.03);
+}
+
+/* Блоки гуртожитків */
+.fknt-dorm-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+    background-color: var(--fknt-light);
+    border: 2px dashed var(--fknt-red);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.fknt-dorm-block:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+.fknt-dorm-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(209, 12, 12, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fknt-dorm-block:hover::before {
+    opacity: 1;
+}
+
+/* Зображення */
+.fknt-image {
+    border-radius: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.fknt-image:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Контейнер для галереї */
+.org-gallery {
+    margin-top: 20px;
+}
+
+.org-gallery .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.org-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid var(--fknt-red);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* Підписи до зображень */
+.gallery-caption {
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Модальне вікно */
+.fknt-modal {
+    border: none; /* Прибираємо рамку */
+    background-color: rgba(0, 0, 0, 0.3); /* Дуже прозорий чорний фон */
+    box-shadow: none; /* Прибираємо тінь для чистого вигляду */
+}
+
+.fknt-modal .btn-close {
+    filter: invert(1); /* Біла кнопка закриття */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1050;
+}
+
+.fknt-modal .modal-body {
+    padding: 0; /* Без відступів */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Повна висота екрана */
+    background-color: transparent; /* Прозорий фон */
+}
+
+.fknt-modal .modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Зберігаємо пропорції */
+    border: 2px solid var(--fknt-red);
+    border-radius: 10px;
+}
+
+/* Контакти у футері */
+.footer-contact {
+    color: var(--light);
+    text-decoration: underline;
+    font-weight: 600;
+    position: relative;
+    padding-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.footer-contact:hover {
+    color: var(--light);
+    background-color: var(--fknt-red);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.footer-contact::after {
+    content: ' ✈️';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.footer-contact:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .logo {
+        height: 50px;
+    }
+
+    .hero {
+        padding: 60px 0;
+        background-attachment: scroll;
+    }
+
+    h1.display-3 {
+        font-size: 2.2rem;
+    }
+
+    .btn-fknt-red {
+        padding: 10px 20px;
+    }
+
+    .fknt-card:hover {
+        transform: scale(1.02);
+    }
+
+    .navbar-nav .contact-link {
+        padding-right: 15px;
+        font-size: 1rem;
+    }
+
+    .footer-contact {
+        font-size: 0.9rem;
+    }
+
+    .plane-icon {
+        height: 1em;
+    }
+
+    .info-text {
+        font-size: 1.1rem;
+    }
+
+    .learning-text {
+        font-size: 1.1rem;
+    }
+
+    .fknt-accordion .accordion-button {
+        font-size: 1.1rem;
+        border-radius: 10px;
+        padding: 10px 15px;
+    }
+
+    .fknt-accordion .accordion-button:not(.collapsed) {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .fknt-accordion .accordion-body {
+        border-radius: 0 0 10px 10px;
+        padding: 15px;
+    }
+
+    .fknt-formula {
+        font-size: 1.1rem;
+    }
+
+    .fknt-dorm-block {
+        min-height: 200px;
+        font-size: 1rem;
+    }
+
+    .btn-learning {
+        font-size: 1.2rem;
+    }
+
+    .faq-card {
+        min-height: 250px;
+        padding: 15px;
+    }
+
+    .faq-card .card-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .faq-card .card-text {
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    .faq-icon {
+        font-size: 1.2rem;
+        margin-right: 8px;
+    }
+
+    .org-main-logo, .org-logo {
+        max-width: 80px;
+    }
+
+    .org-gallery img {
+        max-width: 100%;
+    }
+
+    .gallery-caption {
+        font-size: 0.9rem;
+    }
+
+    .fknt-modal .modal-body {
+        height: 100vh; /* Повна висота на мобільних */
+    }
+}
+
+/* Стилі для табів */
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    color: var(--fknt-dark);
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    margin: 0 10px;
+    background-color: var(--fknt-light);
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--fknt-red);
+    color: var(--light);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: var(--fknt-red);
+    color: var(--light);
+    box-shadow: 0 4px 12px var(--shadow);
+    transform: scale(1.05);
+}
+
+.nav-tabs .nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(209, 12, 12, 0.2);
+}
+
+/* Картки для приміток */
+.fknt-note-card {
+    border: 2px dashed var(--fknt-red);
+    border-radius: 20px;
+    background-color: var(--fknt-light);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fknt-note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow);
+    background-color: var(--light);
+}
+
+.fknt-note-card .card-title {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    color: #000;
+    font-weight: 400;
+    text-align: center;
+}
+
+.fknt-note-card .note-label {
+    font-weight: 700;
+    color: var(--fknt-red);
+}
+
+.fknt-note-card .faq-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Адаптивність для карток приміток */
+@media (max-width: 768px) {
+    .fknt-note-card {
+        padding: 15px;
+    }
+
+    .fknt-note-card .card-title {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .fknt-note-card .faq-icon {
+        font-size: 1.2rem;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .org-logo {
+        float: none; /* Вимикаємо обтікання */
+        margin: 0 auto 15px; /* Центруємо логотип */
+        display: block; /* Робимо логотип блоковим */
+    }
+}
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студрада ФКНТ | Поширені запитання</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!-- шапка -->
+    <header class="header-fixed text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Логотип ФКНТ" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="https://t.me/sr_fknt">Телеграм</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="https://t.me/sr_fcst_bot">Бот для зв'язку</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link contact-link" href="contacts.html">Контакти</a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- герой-секція -->
+    <section class="hero text-center py-5">
+        <div class="container position-relative">
+            <h1 class="display-3 text-white fw-bold animate-text">Що це означає?<img src="assets/plane.png" alt="Літак" class="plane-icon"></h1>
+            <p class="lead text-white animate-text" style="animation-delay: 0.3s;">Тлумачимо всі слова, які чутимеш у перші тижні навчання.</p>
+            <a href="index.html" class="btn btn-fknt-red btn-lg shine-effect">Повернутись до головного меню</a>
+        </div>
+    </section>
+
+    <!-- інформація про FAQ -->
+    <section id="faq-info" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-fknt-red fw-bold text-center mb-5 animate-text">Дізнайся все про ФКНТ!</h2>
+            <ul class="nav nav-tabs mb-4 justify-content-center" id="faqTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="learning-tab" data-bs-toggle="tab" data-bs-target="#learning" role="tab">Навчання</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="student-life-tab" data-bs-toggle="tab" data-bs-target="#student-life" role="tab">Студентське життя</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="faqTabContent">
+                <!-- Навчання -->
+                <div class="tab-pane fade show active" id="learning" role="tabpanel" aria-labelledby="learning-tab">
+                    <div class="row faq-row">
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📚</span> Академічна доброчесність</h5>
+                                    <p class="card-text">Не списувати, не красти чужі роботи, не купувати готові.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">👥</span> Потік</h5>
+                                    <p class="card-text">Кілька груп одного курсу, об’єднані спеціальністю.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">⏳</span> Вікно</h5>
+                                    <p class="card-text">Час між парами, коли можна підготуватися до наступних або просто відпочити, поки інші мучаться на заняттях.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📧</span> Корпоративка</h5>
+                                    <p class="card-text">Університетська електронна пошта. Через неї прилітають усі важливі новини: завдання, дедлайни, повідомлення від викладачів.</p>
+                                    <p class="note" style="font-size: 0.85rem;"><strong>Примітка:</strong> У пошті достатньо почати вводити прізвище — і система сама покаже потрібну людину з її корпоративною адресою. Так можна знайти будь-якого викладача чи студента.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📝</span> Конспект</h5>
+                                    <p class="card-text">Твої особисті шпаргалки з пар. Записуєш, щоб не забути, а потім, в ніч перед сесією, молишся, аби там щось було.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🧪</span> Лаба</h5>
+                                    <p class="card-text">Практика, де треба зробити завдання, а викладач перевіряє, чи ти в темі, чи просто вдаєш вигляд.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📊</span> МКР</h5>
+                                    <p class="card-text">Модульна контрольна робота — контрольна після теми, яка може або підтягнути твою оцінку, або остаточно її «поховати».</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📐</span> РГР</h5>
+                                    <p class="card-text">Розрахунково-графічна робота — серйозна самостійна робота з кількох завдань, яку треба зробити і пояснити викладачу.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📅</span> Сесія</h5>
+                                    <p class="card-text">Час іспитів і нервів — два рази на рік. Взимку та влітку всі студенти стають майстрами тайм-менеджменту і кавомани одночасно.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🎓</span> Екзамен і залік</h5>
+                                    <p class="card-text">Екзамен — головна дата семестру, де потрібно показати всі знання. Залік — трохи простіший варіант: підсумок семестру, іноді з невеличкою контрольною.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📑</span> Курсач</h5>
+                                    <p class="card-text">Великий проект, де ти показуєш, що вчив, а ще трохи молишся, щоб викладач був у хорошому настрої.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🏆</span> Автомат</h5>
+                                    <p class="card-text">Шанс уникнути екзамену, але не радій зарано — його не завжди дають.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🏃</span> Бігунок</h5>
+                                    <p class="card-text">Твій шанс наздогнати борги і закрити тему. Життя дає другі шанси, але не безкінечно — тож краще не зволікай!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">💼</span> Літня практика</h5>
+                                    <p class="card-text">Два варіанти: Виробнича — коли йдеш у реальну компанію чи установу і отримуєш досвід роботи за спеціальністю. Обчислювальна — проходить в університеті, де дають завдання і можуть показати лабораторії — залежно від викладача.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">👑</span> Староста</h5>
+                                    <p class="card-text">Людина, яка завжди «на одній хвилі» і з викладачами, і зі своєю групою. «Обожнює» потік повідомлень (особливо вночі).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🧭</span> Студкуратор</h5>
+                                    <p class="card-text">Старший студент, який допомагає першокурсникам розібратися з навчанням, розкладом і студентським життям. Це твій швидкий контакт для порад, нагадувань і корисних лінків.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">👨‍🏫</span> Куратор</h5>
+                                    <p class="card-text">Викладач, який «веде» вашу групу: допомагає розібратися з навчанням, підказує, куди звертатися з питаннями, і стежить, щоб у групі все було ок.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🏛️</span> Декан</h5>
+                                    <p class="card-text">Керівник факультету, який займається організацією навчального процесу, призначенням викладачів і вирішенням питань на рівні факультету.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🎓</span> Президент</h5>
+                                    <p class="card-text">Вищий керівник університету, який відповідає за загальне управління навчальним закладом, стратегічні рішення та розвиток.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🏢</span> Кафедра</h5>
+                                    <p class="card-text">Місце, де твої викладачі планують, як навчити тебе всьому і трохи попсувати нерви оцінками.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Студентське життя -->
+                <div class="tab-pane fade" id="student-life" role="tabpanel" aria-labelledby="student-life-tab">
+                    <div class="row faq-row">
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">➖</span> Мінуса</h5>
+                                    <p class="card-text">Прізвисько першого курсу в КАІ, яке має давню історію. Коли форма була обов’язковою, на неї нашивалась смужка – позначка курсу. У 1-го була одна смужка — мінус. Форму відмінили, а прізвисько залишилось з нами назавжди.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🗣️</span>Студрада ФКНТ</h5>
+                                    <p class="card-text">Команда студентів, яка робить життя факультету цікавішим: від івентів та до захисту твоїх прав.
+                                         Це ті, хто завжди в курсі всього,
+                                        що відбувається, і можуть підказати, до кого звернутися з будь-яким питанням.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🎭</span> ТОСА ФКНТ</h5>
+                                    <p class="card-text">Творче Об’єднання Студентів і Аспірантів, де можна співати, танцювати, знімати відео, жартувати або просто відриватися з однодумцями. Якщо хочеш трохи сцени й драйву в своєму житті — тобі сюди.</p>
+                                </div>
+                            </div>
+                        </div>                        
+
+                       <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">💡</span> НауХаб</h5>
+                                    <p class="card-text">Затишний простір для навчання, ігор, проєктів і тусовок. Тут є коворкінг, клуби за інтересами і купа івентів. Можна прийти просто з ноутом, а можна — залишитися в команді та робити круті заходи самому.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🧮</span> Примати</h5>
+                                    <p class="card-text">Студенти ПРИкладної МАТематики. Наш маскот — мавпочка, тому її часто можна побачити на символіці ТОСИ та факультету.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">☕</span> Шара</h5>
+                                    <p class="card-text">Місце біля 3-го гуртожитку і Форсажа, де студенти збираються на відпочинок… і тільки не з кавою.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🪟</span> Акваріум</h5>
+                                    <p class="card-text">Загальна кімната в 3-му гуртожитку, де майже всі стіни скляні (окрім однієї), тому її так і назвали. Тут можна посидіти з ноутбуком, повчитися або просто відпочити.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🛋️</span> Папай</h5>
+                                    <p class="card-text">Простір в 7-му гуртожитку для відпочинку і навчання.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🏡</span> Колодязь</h5>
+                                    <p class="card-text">Внутрішній дворик у 3-му корпусі. Зазвичай тут збираються студенти — відпочити або щось провести.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="fknt-card faq-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">🍔</span> Стінка</h5>
+                                    <p class="card-text">Магазин за 3-м гуртожитком, де можна смачно поїсти (попросіть продавчиню розігріти паніні на грилі і буде вам щастя).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- футер -->
+    <footer class="text-center py-4 text-white bg-fknt-dark">
+        <div class="container">
+            <p class="fw-bold">© 2025 Студрада ФКНТ КАІ<img src="assets/plane.png" alt="Літак" class="plane-icon"></p>
+            <p>
+                <a class="footer-contact" href="mailto:stud.rada.fknt@stud.kai.edu.ua">stud.rada.fknt@stud.kai.edu.ua</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

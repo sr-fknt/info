@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студрада ФКНТ | Організації</title>
+    <meta name="description" content="Студентські організації та спільноти КАІ: самоврядування, творчі об’єднання, наукові хаби та інноваційні проєкти.">
+    <meta name="keywords" content="ФКНТ, студентські організації, СР КАІ, СР ФКНТ, ТОСА, Наухаб, Мейкерспangelog, TOV Power, КАІ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Стилі лише для заголовків h6 у блоках департаментів -->
+    <style>
+        /* Департаменти: розмір як у h5, вирівнювання по центру */
+        .fknt-dorm-block h6 {
+            font-size: 1.25rem; /* Такий же розмір, як у h5 за замовчуванням у Bootstrap */
+            text-align: center;
+        }
+
+        /* Адаптивність для мобільних */
+        @media (max-width: 768px) {
+            .fknt-dorm-block h6 {
+                font-size: 1.1rem; /* Узгоджено з .info-text на мобільних */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- шапка -->
+    <header class="header-fixed text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Логотип ФКНТ" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="https://t.me/sr_fknt">Телеграм</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="https://t.me/sr_fcst_bot">Бот для зв'язку</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- герой-секція -->
+    <section class="hero text-center py-5">
+        <div class="container position-relative">
+            <h1 class="display-3 text-white fw-bold animate-text">Організації КАІ!<img src="assets/plane.png" alt="Літак" class="plane-icon"></h1>
+            <p class="lead text-white animate-text" style="animation-delay: 0.3s;">Дізнайся про студентські ініціативи та спільноти, які роблять університет яскравішим!</p>
+            <a href="index.html" class="btn btn-fknt-red btn-lg shine-effect">Повернутись до головного меню</a>
+        </div>
+    </section>
+
+    <!-- інформація про організації -->
+    <section id="org-info" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-fknt-red fw-bold text-center mb-5 animate-text">Студентські організації та спільноти</h2>
+            <!-- Вступний блок: ОСС та самоврядування -->
+            <div class="row faq-row mb-5">
+                <div class="col-md-6 mb-4">
+                    <div class="fknt-card faq-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-fknt-red"><span class="faq-icon">✈️</span> Орган студентського самоврядування</h5>
+                            <p class="card-text">Незалежне студентське об’єднання, яке працює за принципом демократії, даючи студентам можливість разом приймати рішення і впливати на життя навчального закладу.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="fknt-card faq-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-fknt-red"><span class="faq-icon">✈️</span> Студентське самоврядування ФКНТ</h5>
+                            <p class="card-text">Це можливість студентів факультету впливати на навчальний процес і умови навчання, відстоювати свої права та інтереси. 
+                        СР ФКНТ є голосом студентів, який допомагає вирішувати важливі питання, впроваджувати ініціативи та створювати комфортне середовище для всіх.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Акордеон -->
+            <div class="fknt-accordion" id="orgAccordion">
+                <!-- Конференція студентів -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ksu-collapse" aria-expanded="true">
+                            Конференція студентів університету
+                        </button>
+                    </h2>
+                    <div id="ksu-collapse" class="accordion-body collapse show" data-bs-parent="#orgAccordion">
+                        <p class="info-text">Це вищий орган студентського самоврядування, участь в якому може взяти кожен. 
+                            До повноважень КСУ входить затвердження нормативно-правової бази для всього студентського самоврядування, 
+                            контроль за діяльністю всіх органів, прийняття кошторису та багато інших задач. </p>
+                        <p class="info-text" style="text-align: center;"><a href="https://t.me/nau_ksu" class="hyperlink">Слідкуй за діяльністю КСУ</a></p>
+                    </div>
+                </div>
+                <!-- ЦВК -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cvk-collapse">
+                            Центральна виборча комісія
+                        </button>
+                    </h2>
+                    <div id="cvk-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <p class="info-text">Запускає весь процес студентського самоврядування. 
+                            Вона організовує вибори, без яких інші органи не можуть працювати, адже без легітимно обраного складу 
+                            самоврядування просто зупиниться.</p>
+                        <p class="info-text" style="text-align: center;"><a href="https://t.me/studrada_cvk" class="hyperlink">Слідкуй за діяльністю ЦВК</a></p>
+                    </div>
+                </div>
+                <!-- СУД -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sud-collapse">
+                            Студентська уповноважена делегація
+                        </button>
+                    </h2>
+                    <div id="sud-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <p class="info-text">Це орган студентського самоврядування, який слідкує, щоб інші студентські органи діяли за правилами. Вона розглядає скарги на ці органи або посадових осіб університету, ухвалює рішення щодо порушень і стежить за дотриманням положень. Склад делегації обирають щороку на Конференції студентів університету.</p>
+                        <p class="info-text" style="text-align: center;"><a href="https://t.me/nau_sud" class="hyperlink">Слідкуй за діяльністю СУД</a></p>
+                    </div>
+                </div>
+                <!-- СР КАІ -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sr-kai-collapse">
+                            Студентська рада КАІ
+                        </button>
+                    </h2>
+                    <div id="sr-kai-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <img src="assets/logo-kai.png" alt="Логотип СР КАІ" class="org-logo fknt-image img-fluid">
+                        <p class="info-text">Вищим виконавчим ОСС Університету є Студентська рада КАІ</p>
+                        <p class="info-text"><strong>Студентська рада КАІ (СР КАІ)</strong> – серце студентського життя, місце обʼєднання студентів та студенток різних факультетів в одну команду. Тут створюються нові ідеї, реалізуються ініціативи, проводяться важливі заходи. Саме студентська рада представляє інтереси студентства, вирішує всі питання студентської спільноти.</p>
+                        <p class="info-text" style="text-align: center;"><a href="https://t.me/studrada_kai" class="hyperlink">Слідкуй за діяльністю СР КАІ</a></p>
+                    </div>
+                </div>
+                <!-- СР ФКНТ -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sr-fknt-collapse">
+                            Студентська рада ФКНТ
+                        </button>
+                    </h2>
+                    <div id="sr-fknt-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <img src="assets/logo-sr.png" alt="Логотип СР ФКНТ" class="org-logo fknt-image img-fluid">
+                        <p class="info-text"><br><strong>Студентська рада ФКНТ (СР ФКНТ)</strong> – це команда студентів, яка займається організацією життя факультету: від заходів і проєктів до захисту прав студентів та вирішення важливих питань. <br><br>Структура Студради ФКНТ включає:</p>
+                        <ul>
+                            <li><p class="info-text"><strong>Голову Студради</strong> – керує роботою всієї ради, координує проєкти, представляє студентів перед адміністрацією факультету та університету.</p></li>
+                            <li><p class="info-text"><strong>Заступника Голови Студради</strong> – допомагає голові у виконанні обов’язків, підтримує комунікацію між департаментами та курує окремі проєкти.</p></li>
+                            <li><p class="info-text"><strong>Секретаря</strong> – веде протоколи засідань, слідкує за документацією та внутрішнім порядком у роботі Студради.</p></li>
+                            <li><p class="info-text"><strong>Голови департаментів</strong> – відповідають за роботу окремих напрямків, організацію заходів та виконання завдань у своїх сферах.</p></li>
+                        </ul>
+                        <h5 class="text-fknt-red mt-4" style="text-align: center;">Департаменти Студради ФКНТ</h5>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="fknt-dorm-block">
+                                    <div class="p-3">
+                                        <h6 class="text-fknt-red"> <strong>Медіа та комунікації</strong></h6>
+                                        <p class="info-text">Створює контент, веде соцмережі факультету, готує афіші та фото, щоб ти завжди був у курсі подій. Це команда, яка відповідає за зв'язок між студентами та Студрадою.<br><br><br></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="fknt-dorm-block">
+                                    <div class="p-3">
+                                        <h6 class="text-fknt-red"> <strong>Громадська активність</strong></h6>
+                                        <p class="info-text">Займається розвитком громадянської свідомості серед студентів і залучає їх до участі у важливих ініціативах. Це команда, яка допомагає студентам бути активними учасниками суспільного життя та не залишатися осторонь важливих подій.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="fknt-dorm-block">
+                                    <div class="p-3">
+                                        <h6 class="text-fknt-red"> <strong>Студкуратори</strong></h6>
+                                        <p class="info-text">Допомагає першокурсникам швидко адаптуватися до навчання та студентського життя, проводить ознайомчі зустрічі, лекції. Це команда, до якої вони можуть звернутися за порадою чи підтримкою у будь-якій ситуації.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="info-text mt-4"><strong>Окрім роботи департаментів, Студрада займається й іншими важливими напрямами:</strong></p>
+                        <ul>
+                            <li><p class="info-text">Моніторинг освітнього процесу – стежить, щоб навчання було якісним і відповідало потребам студентів, а також допомагає у вирішенні конфліктних чи проблемних ситуацій.</p></li>
+                            <li><p class="info-text">Підтримка та розвиток IT-спільноти факультету – створюємо додаткові можливості для розвитку знань і навичок за межами навчальної програми, організовуючи лекції, тренінги та хакатони.</p></li>
+                            <li><p class="info-text">Допомога в реалізації інноваційних проєктів студентів – надає підтримку і ресурси для втілення цікавих ідей у життя.</p></li>
+                        </ul>
+                        <div class="org-gallery mt-4">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/sr1.JPG" alt="Фото СР ФКНТ 2" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/sr1.JPG">
+                                </div>
+                                
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/srf2.jpg" alt="Фото СР ФКНТ 2" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/srf2.jpg">
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/srf3.jpg" alt="Фото СР ФКНТ 3" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/srf3.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="info-text" style="text-align: center;"><a href="https://t.me/sr_fknt" class="hyperlink">Слідкуй за діяльністю СР ФКНТ</a></p>
+                    </div>
+                </div>
+                <!-- СР СМ -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sr-sm-collapse">
+                            Студентська рада Студентського Містечка
+                        </button>
+                    </h2>
+                    <div id="sr-sm-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <img src="assets/logo-srsm.png" alt="Логотип СР СМ" class="org-logo fknt-image img-fluid">
+                        <p class="info-text"><strong>Студентська рада Студентського Містечка (СР СМ)</strong> – команда студентів, яка захищає твої інтереси, допомагає вирішувати проблеми та робить життя в гуртожитках більш комфортним і цікавим, це твій «місток» між мешканцями та адміністрацією.</p>
+                        <p class="info-text"> СР СМ очолює Голова, який обирається мешканцями всіх гуртожитків на один рік. До складу СР СМ також входять заступники голови, секретар, голови та члени департаментів, голови студентських рад усіх гуртожитків студмістечка.</p>
+                        <p class="info-text"><strong>Студентська рада Гуртожитку (СРГ)</strong> — студорганізація, в якій можна проявити свої організаторські здібності та втілити власні ідеї для покращення життя в гуртожитку. В кожному гуртожитку студрада діє незалежно, та по-різному, але мета одна — зробити життя студентів комфортним та цікавим надаючи допомогу, дбаючи про порядок та влаштовуючи івенти.</p>
+                        <h5 class="text-fknt-red mt-4" style="text-align: center;">Контактна інформація гуртожитків</h5>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="fknt-dorm-block">
+                                    <div class="p-3">
+                                        <h6 class="text-fknt-red"><strong>Гуртожиток 3</strong></h6>
+                                            <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+                                                <li>Чат за <a href="https://t.me/+38pVbv7vFIowOTNi" style="color: red; font-style: italic;">посилання</a></li>
+                                                <li>Канал за <a href="https://t.me/studrada3" style="color: red; font-style: italic;">посилання</a></li>
+                                            </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="fknt-dorm-block">
+                                    <div class="p-3">
+                                        <h6 class="text-fknt-red"><strong>Гуртожиток 9</strong></h6>
+                                            <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+                                                <li>Канал за <a href="https://t.me/gurt_9_NAU" style="color: red; font-style: italic;">посилання</a></li>
+                                            </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="fknt-dorm-block">
+                                    <div class="p-3">
+                                        <h6 class="text-fknt-red"><strong>Гуртожиток 11</strong></h6>
+                                            <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+                                                <li>Чат за <a href="https://t.me/gurt11chat" style="color: red; font-style: italic;">посилання</a></li>
+                                                <li>Канал за <a href="https://t.me/gurt11" style="color: red; font-style: italic;">посилання</a></li>
+                                            </ul>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="info-text" style="text-align: center;"><a href="https://t.me/nau_srsm" class="hyperlink">Слідкуй за діяльністю СР СМ</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ТОСА -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tosa-collapse">
+                            Творче об’єднання студентів і аспірантів
+                        </button>
+                    </h2>
+                    <div id="tosa-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <img src="assets/logo-tosa-fcst.png" alt="Логотип ТОСА" class="org-logo fknt-image img-fluid">
+                        <p class="info-text"><strong><br>Творче об’єднання студентів і аспірантів КАІ (ТОСА)</strong> — це місце, де кожен може проявити свої таланти і розвиватися в комфортній, дружній атмосфері. Тут немає потреби бути профі — головне мати бажання і драйв.</p>
+                        <p class="info-text"><strong><br><br>Тобі точно сподобається ТОСА, якшо ти:</strong></p>
+                        <ul class="info-text">
+                            <li>любиш музику і захоплюєшся танцями</li>
+                            <li>цікавишся відеомонтажем, зйомкою чи хочеш навчитися створювати круті ролики</li>
+                            <li>любиш гумор і хочеш спробувати свої сили у стендапі або імпровізації</li>
+                            <li>або просто хочеш знайти команду однодумців і активно провести час</li>
+                        </ul>
+                        <p class="info-text">У ТОСА ти не лише розвиваєшся творчо, а й стаєш частиною справжнього студентського вайбу — організовуєш і береш участь у традиційних концертах та заходах. Це не просто гурток, це живий творчий простір, де студенти та аспіранти збираються разом, щоб надихати один одного і робити студентське життя цікавішим та яскравішим.</p>
+                        <div class="org-gallery mt-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/tosa2.jpeg" alt="Фото ТОСА" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/tosa2.jpeg">
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/tosa1.png" alt="Фото ТОСА" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/tosa1.png">
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/tosa3.jpg" alt="Фото ТОСА" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/tosa3.jpg">
+                                </div>
+                                <p class="info-text" style="text-align: center;"><a href="https://t.me/tosa_fcst" class="hyperlink">Слідкуй за діяльністю ТОСА ФКНТ</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Наухаб -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nauhab-collapse">
+                            NAUHUB
+                        </button>
+                    </h2>
+                    <div id="nauhab-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <img src="assets/logo-hub.png" alt="Логотип Наухаб" class="org-logo fknt-image img-fluid">
+                        <p class="info-text"><br><strong>NAUHUB</strong> — це простір у КАІ, де студенти збираються, щоб робити проєкти, організовувати події та просто проводити час разом.</p>
+                        <p class="info-text"><br><strong>У команді Хабу можна:</strong></p>
+                        <ul class="info-text">
+                            <li>навчитися писати пости та вести соцмережі</li>
+                            <li>здобути досвід у проджект-менеджменті</li>
+                            <li>спробувати себе в івент-менеджменті</li>
+                            <li>прокачати комунікацію та роботу в команді</li>
+                        </ul>
+                        <p class="info-text"><strong>НауХаб — це ще й місце зустрічей інших студентських спільнот:</strong></p>
+                        <ul class="info-text">
+                            <li>Шаховий клуб</li>
+                            <li>Музичний клуб</li>
+                            <li>Board Game Club</li>
+                            <li>Дебатний клуб</li>
+                        </ul>
+                        <p class="info-text">У Хабі є коворкінг-зона. Слідкуйте за соцмережами наухабу, щоб не пропустити події, а також приєднуйтесь до чату координаторів — там пишуть, коли відкривається коворкінг. Можна приходити з друзями, працювати над лабораторними або просто відпочити між парами.</p>
+                        <p class="info-text">Можна приєднатися до команди Хабу та розвиватися в організації подій, або просто відвідувати заходи: квартирники, клубні зустрічі, лекції, воркшопи, ігрові вечори та багато іншого.</p>
+                        <div class="org-gallery mt-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/nh1.jpg" alt="Фото Наухаб 1" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/nh1.jpg">
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/nh2.jpg" alt="Фото Наухаб 2" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/nh2.jpg">
+                                </div>
+                                <p class="info-text" style="text-align: center;"><a href="https://t.me/addlist/RA91IusT4nYyMzA6" class="hyperlink">Слідкуй за діяльністю NAUHUB</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Мейкерспейс -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#makerspace-collapse">
+                            Мейкерспейс КАІ 
+                        </button>
+                    </h2>
+                    <div id="makerspace-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <p class="info-text"><strong>Мейкерспейс КАІ</strong> — це не просто майстерня, а справжній творчий хаб, де можна спаяти корисний пристрій, надрукувати деталь на 3D-принтері, вирізати крутий дизайн на лазері та зібрати власний проєкт з нуля. Тут завжди чути гул інструментів і панує атмосфера, яка надихає пробувати, експериментувати та створювати.</p>
+                        <p class="info-text"><strong>Розташований в аудиторії 3.100</strong> — і саме тут ти можеш підготуватися, щоб показати свої напрацювання на заходах, як КАІ Maker Faire який проводили для студентів у нас в університеті. Це був простір, де мейкери ділились своїми проєктами, отримували фідбек, знаходили команду і вперше показували себе «в голос».</p>
+                        <div class="org-gallery mt-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/maker1.jpg" alt="Фото Мейкерспейс 1" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/maker1.jpg">
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/maker2.jpg" alt="Фото Мейкерспейс 2" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/maker2.jpeg">
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <img src="assets/maker3.jpeg" alt="Фото Мейкерспейс 3" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/maker3.jpeg">
+                                </div>
+                                <p class="info-text" style="text-align: center;"><a href="https://discord.gg/gStYZPUq6U" class="hyperlink">Слідкуй за діяльністю мейкерспейс</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TOV Power -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tov-power-collapse">
+                            TOV Power
+                        </button>
+                    </h2>
+                    <div id="tov-power-collapse" class="accordion-body collapse" data-bs-parent="#orgAccordion">
+                        <p class="info-text"><strong>TOV Power</strong> — це інженерна студентсько-волонтерська лабораторія, де створюють ліхтарики, павербанки та інші корисні девайси для наших військових. Тут ти не просто прокачуєш свої технічні навички, а реально допомагаєш тим, хто на передовій. Волонтерство з користю — коротко і по суті. Підключайся — і твої руки запрацюють на перемогу!</p>
+                        <p class="info-text">Чому це варто:</p>
+                        <ul class="info-text">
+                            <li>Практичний досвід у конструюванні електроніки та електротехніки</li>
+                            <li>Виготовляєш речі, які справді захищають нашу країну</li>
+                            <li>Все в теплій атмосфері однодумців, без зайвої пафосності</li>
+                        </ul>
+                        <p class="info-text" style="text-align: center;"><a href="https://t.me/TOVpower" class="hyperlink">Слідкуй за діяльністю TOV Power</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальне вікно для зображень -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content fknt-modal">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <img src="" alt="Зображення" class="modal-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- футер -->
+    <footer class="text-center py-4 text-white bg-fknt-dark">
+        <div class="container">
+            <p class="fw-bold">© 2025 Студрада ФКНТ КАІ<img src="assets/plane.png" alt="Літак" class="plane-icon"></p>
+            <p>
+                <a class="footer-contact" href="mailto:stud.rada.fknt@stud.kai.edu.ua">stud.rada.fknt@stud.kai.edu.ua</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Скрипт для модального вікна
+        const imageModal = document.getElementById('imageModal');
+        imageModal.addEventListener('show.bs.modal', function (event) {
+            const img = event.relatedTarget;
+            const modalImage = imageModal.querySelector('.modal-image');
+            modalImage.src = img.getAttribute('data-bs-image');
+        });
+    </script>
+</body>
+</html>

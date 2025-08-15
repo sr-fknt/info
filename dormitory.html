@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студрада ФКНТ | Гуртожитки</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!-- шапка -->
+    <header class="header-fixed text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Логотип ФКНТ" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="https://t.me/sr_fknt">Телеграм</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="https://t.me/sr_fcst_bot">Бот для зв'язку</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- герой-секція -->
+    <section class="hero text-center py-5">
+        <div class="container position-relative">
+            <h1 class="display-3 text-white fw-bold animate-text">Гуртожитки ФКНТ!<img src="assets/plane.png" alt="Літак" class="plane-icon"></h1>
+            <p class="lead text-white animate-text" style="animation-delay: 0.3s;">Все про гуртожитки: як поселитися, які умови та як зв’язатися зі студрадою!</p>
+            <a href="index.html" class="btn btn-fknt-red btn-lg shine-effect">Повернутись до головного меню</a>
+        </div>
+    </section>
+
+    <!-- інформація про гуртожитки -->
+    <section id="dormitory-info" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-fknt-red fw-bold text-center mb-5 animate-text">Все про гуртожитки</h2>
+            <div class="fknt-accordion" id="dormitoryAccordion">
+                <!-- Основне про гуртожитки -->
+                <div class="accordion-item fknt-card">
+                    <h2 class="accordion-header" id="headingDormMain">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDormMain" aria-expanded="true" aria-controls="collapseDormMain">
+                            Основне про гуртожитки
+                        </button>
+                    </h2>
+                    <div id="collapseDormMain" class="accordion-collapse collapse show" aria-labelledby="headingDormMain" data-bs-parent="#dormitoryAccordion">
+                        <div class="accordion-body learning-text">
+                            <p>На час навчання університет пропонує три варіанти житла — від класичного коридорного до більш сучасного блочного формату.</p>
+                            <div class="text-center mt-3">
+                                <a href="https://www.google.com/maps/d/u/0/edit?mid=10bcc2Zp086kBM4H3koWbXG3UCKUy87w&usp=sharing" class="btn btn-fknt-red btn-learning shine-effect" target="_blank">Карта гуртожитків</a>
+                            </div>
+                            <div class="org-gallery mt-4">
+                                <div class="row">
+                                    <div class="col-md-4 mb-4">
+                                        <img src="assets/map_gurt.png" alt="Карта гуртожитків" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/map_gurt.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row faq-row mt-4">
+                                <div class="col-md-4 mb-4">
+                                    <div class="fknt-card faq-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-fknt-red">Гуртожиток №3 — коридорна система</h5>
+                                            <p class="card-text">Усі кімнати на поверсі мають спільну кухню та туалет. Душ — на нульовому поверсі.<br><strong>Кількість осіб у кімнаті: 2, 3 або 4.</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="fknt-card faq-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-fknt-red">Гуртожиток №9 — секційна система</h5>
+                                            <p class="card-text">Кілька кімнат утворюють одну секцію з власною кухнею і туалетом. Душ — спільний, на нульовому поверсі.<br><strong>Кількість осіб у кімнаті: 2, 3 або 4.</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="fknt-card faq-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-fknt-red">Гуртожиток №11 — блочна система</h5>
+                                            <p class="card-text">Блок = дві кімнати + душ + туалет. На поверсі 2 спільні кухні.<br><strong>Кількість осіб у кімнаті: 2, 3 або 4.</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Поселення -->
+                <div class="accordion-item fknt-card">
+                    <h2 class="accordion-header" id="headingSettlement">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSettlement" aria-expanded="false" aria-controls="collapseSettlement">
+                            Поселення
+                        </button>
+                    </h2>
+                    <div id="collapseSettlement" class="accordion-collapse collapse" aria-labelledby="headingSettlement" data-bs-parent="#dormitoryAccordion">
+                        <div class="accordion-body learning-text">
+                            <p><strong>Коли відбудеться поселення?</strong> Орієнтовні дати поселення <strong>25–30 серпня</strong>, детальний графік буде оголошено окремо для кожної спеціальності.</p>
+                            <p>В кабінет вступника КАІ (Digital University) надійде інформація про заселення в гуртожиток.</p>
+                            <div class="fknt-note-card mt-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📝</span> <strong>Примітка:</strong> На поселення краще брати мінімум речей. Сам процес займає декілька годин, тож речі будеш носити з собою.</h5>
+                                </div>
+                            </div>
+                            <p class="mt-3"><strong>Необхідні документи:</strong></p>
+                            <ul>
+                                <li>Паспорт/ID картка</li>
+                                <li>Медична довідка 086/о з флюорографією</li>
+                            </ul>
+                            <p class="mt-3"><strong>Як оплатити гуртожиток?</strong></p>
+                            <ul>
+                                <li>Оплата в день поселення — обов’язкова</li>
+                                <li>Оплата онлайн за реквізитами (квитанцію нададуть при поселенні)</li>
+                            </ul>
+                            <div class="fknt-note-card mt-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📝</span> <strong>Примітка:</strong> Вказуй ПІБ згідно з квитанцією. Чек надсилати не потрібно, збережи його для отримання перепустки.</h5>
+                                </div>
+                            </div>
+                            <p class="mt-3">Якщо маєш пільги — перевір, чи маєш право на знижку на проживання.</p>
+                            <div class="org-gallery mt-4">
+                                <div class="row">
+                                    <div class="col-md-4 mb-4">
+                                        <img src="assets/pilga.png" alt="Інформація про пільги" class="fknt-image img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="assets/pilga.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fknt-note-card mt-4">
+                                <div class="card-body">
+                                    <h5 class="card-title text-fknt-red"><span class="faq-icon">📝</span> <strong>Примітка:</strong> Контакти бухгалтерії студмістечка:<br> <a href="mailto:studmisto@kai.edu.ua" class="hyperlink">studmisto@kai.edu.ua</a>, гуртожиток №3, каб. 11<br>пн–пт, 9:00–16:00 (обід 12:00–13:00)<br>(044) 406-70-41</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Студентська рада студмістечка -->
+                <div class="accordion-item fknt-card">
+                    <h2 class="accordion-header" id="headingStudentCouncil">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStudentCouncil" aria-expanded="false" aria-controls="collapseStudentCouncil">
+                            Студентська рада студмістечка
+                        </button>
+                    </h2>
+                    <div id="collapseStudentCouncil" class="accordion-collapse collapse" aria-labelledby="headingStudentCouncil" data-bs-parent="#dormitoryAccordion">
+                        <div class="accordion-body learning-text">
+                            <p><strong>Студентська Рада Студентського Містечка (СР СМ)</strong> — це орган студентського самоврядування, який представляє та захищає інтереси мешканців гуртожитків.</p>
+                            <!-- <p><strong>Структура СР СМ:</strong></p> -->
+                            <p>СР СМ очолює Голова, який обирається мешканцями всіх гуртожитків на один рік. До складу СР СМ також входять заступники голови, секретар, голови та члени департаментів, голови студентських рад усіх гуртожитків студмістечка.</p>
+                            <p class="text-fknt-red mt-4" style="text-align: center;"><strong>Контактна інформація гуртожитків:</strong></p>
+                            <div class="row faq-row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="fknt-card faq-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-fknt-red">Гуртожиток №3</h5>
+                                            <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+                                                <li>Чат за <a href="https://t.me/+38pVbv7vFIowOTNi" style="color: red; font-style: italic;">посилання</a></li>
+                                                <li>Канал за <a href="https://t.me/studrada3" style="color: red; font-style: italic;">посилання</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="fknt-card faq-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-fknt-red">Гуртожиток №9</h5>
+                                            <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+                                                <li>Канал за <a href="https://t.me/gurt_9_NAU" style="color: red; font-style: italic;">посилання</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="fknt-card faq-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-fknt-red">Гуртожиток №11</h5>
+                                            <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+                                                <li>Чат за <a href="https://t.me/gurt11chat" style="color: red; font-style: italic;">посилання</a></li>
+                                                <li>Канал за <a href="https://t.me/gurt11" style="color: red; font-style: italic;">посилання</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальне вікно для зображень -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content fknt-modal">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <img src="" alt="Зображення" class="modal-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- футер -->
+    <footer class="text-center py-4 text-white bg-fknt-dark">
+        <div class="container">
+            <p class="fw-bold">© 2025 Студрада ФКНТ КАІ<img src="assets/plane.png" alt="Літак" class="plane-icon"></p>
+            <p>
+                <a class="footer-contact" href="mailto:stud.rada.fknt@stud.kai.edu.ua">stud.rada.fknt@stud.kai.edu.ua</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Скрипт для модального вікна
+        const imageModal = document.getElementById('imageModal');
+        imageModal.addEventListener('show.bs.modal', function (event) {
+            const img = event.relatedTarget;
+            const modalImage = imageModal.querySelector('.modal-image');
+            modalImage.src = img.getAttribute('data-bs-image');
+        });
+    </script>
+</body>
+</html>
