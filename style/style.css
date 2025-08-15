@@ -393,18 +393,6 @@ h1, h2, h5 {
     box-shadow: 0 6px 12px var(--shadow);
 }
 
-.fknt-dorm-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(209, 12, 12, 0.1), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
 .fknt-dorm-block:hover::before {
     opacity: 1;
 }
