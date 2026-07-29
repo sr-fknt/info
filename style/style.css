@@ -1,39 +1,79 @@
-/* Ресет стилів */
+/* =========================================================
+   СТУДРАДА ФКНТ — style.css
+   Редизайн v2: "посадковий талон" / неоbrutalism.
+   Товсті контури, тверді офсетні тіні, sticker-вайб.
+   Кольори та контент — без змін.
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Основні кольори */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+/* Основні кольори (без змін) */
 :root {
     --fknt-red: #d10c0c;
     --fknt-light: #fff5f5;
     --fknt-dark: #300000;
     --light: #ffffff;
     --shadow: rgba(209, 12, 12, 0.3);
+
+    /* нові токени під брутал-стиль */
+    --ink: #131010;
+    --paper: #fdf9f2;
+    --border-w: 3px;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --hard: 7px 7px 0 var(--ink);
+    --hard-sm: 4px 4px 0 var(--ink);
+    --hard-hover: 10px 10px 0 var(--ink);
+    --hard-red: 7px 7px 0 var(--fknt-red);
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Фон для секцій */
-.bg-fknt-red {
-    background-color: var(--fknt-red);
+body {
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image: radial-gradient(var(--ink) 1px, transparent 1px);
+    background-size: 26px 26px;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-.bg-fknt-dark {
-    background-color: var(--fknt-dark);
+::selection { background: var(--fknt-red); color: var(--light); }
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb {
+    background: var(--fknt-red);
+    border: 2px solid var(--ink);
 }
 
-.bg-fknt-light {
-    background-color: var(--fknt-light);
-}
+.bg-fknt-red { background-color: var(--fknt-red); }
+.bg-fknt-dark { background-color: var(--fknt-dark); }
+.bg-fknt-light { background-color: var(--fknt-light); }
+.bg-light { background-color: var(--paper) !important; }
 
-/* Шапка */
+/* =========================================================
+   ШАПКА
+   ========================================================= */
 .header-fixed {
     background-color: #000000 !important;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-fixed.is-scrolled {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-nav .contact-link {
@@ -52,7 +92,6 @@
     transform: scale(1.05);
 }
 
-/* Логотип */
 .logo {
     height: 70px;
     transition: transform 0.3s ease-in-out;
@@ -62,315 +101,492 @@
     transform: scale(1.2) rotate(5deg);
 }
 
-/* Головний логотип організацій */
 .org-main-logo {
     max-width: 150px;
     margin: 0 auto 20px;
     display: block;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--hard-sm);
+    background: var(--light);
+    padding: 8px;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
 .org-main-logo:hover {
-    transform: scale(1.05);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
-/* Герой-секція */
+/* =========================================================
+   БІГУЧИЙ РЯДОК (додається через scripts.js, декоративний)
+   ========================================================= */
+.fknt-ticker {
+    background: var(--fknt-red);
+    border-bottom: var(--border-w) solid var(--ink);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.fknt-ticker-track {
+    display: inline-flex;
+    width: max-content;
+    animation: tickerScroll 22s linear infinite;
+    padding: 7px 0;
+}
+
+.fknt-ticker span {
+    display: inline-block;
+    color: var(--light);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    padding-right: 2.5rem;
+}
+
+@keyframes tickerScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   ГЕРОЙ-СЕКЦІЯ
+   ========================================================= */
 .hero {
-    background: #000000;
-    background: linear-gradient(135deg, #000000, #1a0000, var(--fknt-red), var(--fknt-dark));
-    background-size: 150% 150%;
-    animation: gradientMove 8s ease infinite;
+    background-color: #000000;
+    background-image: radial-gradient(circle at 50% 30%, rgba(209, 12, 12, 0.35), transparent 55%);
     color: var(--light);
     position: relative;
     overflow: hidden;
-    padding: 100px 0;
-    background-attachment: fixed;
+    padding: 110px 0 100px;
+    border-bottom: var(--border-w) solid var(--fknt-red);
 }
 
-/* Анімація тексту */
+.hero::before {
+    /* плоске 2D "конфеті": кола + зірочки різного розміру, повільно дрейфують */
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image:
+        radial-gradient(circle, var(--fknt-red) 40%, transparent 41%),
+        radial-gradient(circle, var(--light) 40%, transparent 41%),
+        radial-gradient(circle, var(--fknt-red) 40%, transparent 41%),
+        radial-gradient(circle, var(--light) 40%, transparent 41%),
+        radial-gradient(circle, var(--fknt-red) 40%, transparent 41%);
+    background-repeat: no-repeat;
+    background-size: 14px 14px, 10px 10px, 8px 8px, 12px 12px, 9px 9px;
+    background-position:
+        8% 22%,
+        18% 68%,
+        88% 30%,
+        78% 78%,
+        50% 12%;
+    opacity: 0.55;
+    pointer-events: none;
+    animation: confettiDrift 9s ease-in-out infinite alternate;
+}
+
+@keyframes confettiDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(10px, -14px); }
+}
+
+
+
+.hero::after {
+    /* маскот ФКНТ — стікер-бейдж з пунктирним кільцем, легко прибрати одним правилом */
+    content: "🐒";
+    position: absolute;
+    right: 8%;
+    top: 18%;
+    font-size: 3rem;
+    line-height: 1;
+    background: var(--fknt-light);
+    border: var(--border-w) solid var(--light);
+    outline: 2px dashed var(--fknt-red);
+    outline-offset: 6px;
+    border-radius: 50%;
+    width: 5.2rem;
+    height: 5.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--hard-red);
+    transform: rotate(-9deg);
+    animation: badgeWobble 4.5s ease-in-out infinite;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero::after { width: 3.6rem; height: 3.6rem; font-size: 2rem; right: 5%; top: 10%; }
+}
+
+@keyframes badgeWobble {
+    0%, 100% { transform: rotate(-9deg) translateY(0); }
+    50% { transform: rotate(6deg) translateY(-10px); }
+}
+
+.hero h1.display-3 {
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--light);
+    text-shadow: none;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding-bottom: 14px;
+    background-image: linear-gradient(var(--fknt-red), var(--fknt-red));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 10px;
+}
+
+.hero .lead {
+    max-width: 620px;
+    margin: 18px auto 0;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.hero .btn-fknt-red.btn-lg {
+    position: relative;
+    z-index: 2;
+    margin-top: 8px;
+    animation: ctaPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+    0%, 100% { box-shadow: var(--hard); }
+    50% { box-shadow: var(--hard-hover); }
+}
+
+/* Анімація появи тексту */
 .animate-text {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
+    transform: translateY(18px);
+    animation: fadeInUp 0.6s var(--ease) forwards;
 }
 
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
-/* Іконка літака в заголовку */
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
 .plane-icon {
-    height: 1.2em;
+    height: 1.05em;
     vertical-align: middle;
-    margin-left: 0.2em;
-    transition: transform 0.3s ease-in-out;
+    margin-left: 0.25em;
+    transition: transform 0.3s var(--ease);
+    display: inline-block;
 }
 
-.plane-icon:hover {
-    transform: rotate(45deg) scale(1.2);
-}
+/* .plane-icon:hover { transform: rotate(-25deg) translateY(-3px) scale(1.2); } */
 
 /* Заголовки */
 h1, h2, h5 {
     color: var(--fknt-red);
-    text-shadow: 2px 2px 4px var(--shadow);
-    font-weight: 700;
+    text-shadow: none;
+    font-weight: 800;
 }
 
-/* Текст */
-.text-fknt-red {
-    color: var(--fknt-red);
-    text-shadow: 1px 1px 2px var(--shadow);
+section h2.text-fknt-red {
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    position: relative;
+    padding: 6px 18px;
+    background: var(--light);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--hard-sm);
+    margin-bottom: 8px !important;
 }
 
-.info-text {
-    color: #000000;
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
+.text-fknt-red { color: var(--fknt-red); text-shadow: none; }
 
-.learning-text {
-    font-size: 1.3rem;
-    line-height: 1.7;
-}
+.info-text { color: var(--ink); font-size: 1.12rem; line-height: 1.7; opacity: 0.85; }
 
-/* Гіперпосилання в тексті */
+.learning-text { font-size: 1.18rem; line-height: 1.75; color: var(--ink); opacity: 0.85; }
+
 .hyperlink {
     color: var(--fknt-red);
-    font-style: italic;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    font-style: normal;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: background-color 0.2s var(--ease);
 }
 
-.hyperlink:hover {
-    background-color: var(--fknt-light);
-    border-radius: 3px;
-}
+.hyperlink:hover { background-color: #ffe3e3; }
 
-/* Кнопки */
+/* =========================================================
+   КНОПКИ — плоскі, з твердою тінню, "натискаються"
+   ========================================================= */
 .btn-fknt-red {
     background-color: var(--fknt-red);
-    border-color: var(--fknt-red);
+    border: var(--border-w) solid var(--ink);
     color: var(--light);
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 12px 26px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--hard);
+    transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
 
 .btn-fknt-red:hover {
-    background-color: var(--light);
-    color: var(--fknt-red);
-    box-shadow: 0 4px 12px var(--shadow);
-    transform: scale(1.05);
+    background-color: var(--fknt-red);
+    color: var(--light);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard-hover);
+}
+
+.btn-fknt-red:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--ink);
 }
 
 .btn-outline-fknt-red {
-    border: 2px solid var(--fknt-red);
-    color: var(--fknt-red);
-    font-weight: bold;
-    transition: all 0.3s ease;
+    border: var(--border-w) solid var(--ink);
+    color: var(--ink);
+    background: var(--light);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.92rem;
+    border-radius: var(--radius-sm);
+    padding: 10px 22px;
+    box-shadow: var(--hard-sm);
+    transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background-color 0.15s var(--ease), color 0.15s var(--ease);
 }
 
 .btn-outline-fknt-red:hover {
     background-color: var(--fknt-red);
     color: var(--light);
-    box-shadow: 0 4px 12px var(--shadow);
-    transform: scale(1.05);
+    border-color: var(--ink);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
-/* Ефект блиску для кнопок */
-.shine-effect {
-    position: relative;
-    overflow: hidden;
+.btn-outline-fknt-red:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 var(--ink);
 }
+
+.shine-effect { position: relative; overflow: hidden; }
 
 .shine-effect::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
-    width: 50%;
+    width: 40%;
     height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transform: skewX(-25deg);
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
     transition: left 0.5s ease;
 }
 
-.shine-effect:hover::before {
-    left: 150%;
-}
+.shine-effect:hover::before { left: 150%; }
 
-.btn-learning {
-    font-size: 1.4rem;
-}
+.btn-learning { font-size: 1.2rem; }
 
-/* Картки */
+/* =========================================================
+   КАРТКИ — "посадкові талони"
+   ========================================================= */
 .fknt-card {
-    border: 2px solid var(--fknt-red);
-    border-radius: 20px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
     background-color: var(--light);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .fknt-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px var(--shadow);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
-/* Картки FAQ */
+/* Картки швидких посилань на головній — стилізовані під квиток, з нумерацією */
+.row > div > .card.fknt-card {
+    counter-increment: fknt-ticket;
+    position: relative;
+}
+
+.row > div > .card.fknt-card::before {
+    content: "№0" counter(fknt-ticket);
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--light);
+    background: var(--ink);
+    padding: 3px 9px;
+    border-radius: 999px;
+    z-index: 3;
+}
+
+.row > div > .card.fknt-card .card-body { padding: 2.4rem 1.5rem 1.7rem; position: relative; }
+
+.row > div > .card.fknt-card .card-body::before {
+    content: "";
+    display: block;
+    height: 0;
+    border-top: 2px dashed rgba(19, 16, 16, 0.25);
+    margin: 0 -1.5rem 1.4rem;
+}
+
+/* Картки FAQ — рівні всюди; нахил лишається тільки в розділі "Словник першокурсника" (faq.html) */
 .faq-card {
-    border: 2px dashed var(--fknt-red);
-    background-color: var(--fknt-light);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.1s ease;
+    border: var(--border-w) solid var(--ink);
+    background-color: var(--light);
+    border-radius: var(--radius);
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     min-height: 200px;
-    padding: 20px;
+    padding: 22px;
 }
 
 .faq-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow);
-    background-color: var(--light);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
-.faq-card .card-title {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    text-align: center;
+/* Нахил-"стікер" тільки в розділі Словник першокурсника */
+#faqTabContent .faq-row > div:nth-child(odd) .faq-card { transform: rotate(-1deg); }
+#faqTabContent .faq-row > div:nth-child(even) .faq-card { transform: rotate(1deg); }
+
+#faqTabContent .faq-card:hover {
+    transform: rotate(0deg) translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
-.faq-card .card-text {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    text-align: justify;
-}
+.faq-card .card-title { font-size: 1.3rem; margin-bottom: 14px; text-align: center; }
 
-.faq-icon {
-    font-size: 1.5rem;
-    margin-right: 10px;
-}
+.faq-card .card-text { font-size: 1.03rem; line-height: 1.6; text-align: justify; opacity: 0.85; }
+
+.faq-icon { font-size: 1.4rem; margin-right: 10px; }
 
 /* Логотипи організацій */
 .org-logo {
     max-width: 100px;
-    margin: 10px; /* Відступи з усіх боків */
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    float: left; /* Логотип ліворуч */
-    shape-outside: inset(0); /* Обтікання за контуром зображення */
+    margin: 10px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
+    background: var(--light);
+    padding: 4px;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    float: left;
+    shape-outside: inset(0);
+    box-shadow: var(--hard-sm);
 }
 
-.org-logo:hover {
-    transform: scale(1.05);
-}
+.org-logo:hover { transform: translate(-3px, -3px); box-shadow: var(--hard); }
 
-/* Зображення організацій */
 .org-image {
     max-width: 100%;
-    border-radius: 10px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
     margin-top: 15px;
-    transition: transform 0.3s ease;
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
-.org-image:hover {
-    transform: scale(1.03);
-}
+.org-image:hover { transform: translate(-3px, -3px); box-shadow: var(--hard); }
 
-/* Акордеон */
-.fknt-accordion {
-    border-radius: 20px;
+/* =========================================================
+   АКОРДЕОН
+   ========================================================= */
+.fknt-accordion { overflow: visible; }
+
+.fknt-accordion .accordion-item {
+    background-color: var(--light);
+    border: var(--border-w) solid var(--ink);
+    margin-bottom: 18px;
+    border-radius: var(--radius);
+    box-shadow: var(--hard-sm);
+    transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
     overflow: hidden;
 }
 
-.fknt-accordion .accordion-item {
-    background-color: transparent;
-    border: 2px solid var(--fknt-red);
-    margin-bottom: 15px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .fknt-accordion .accordion-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px var(--shadow);
+    box-shadow: var(--hard);
+    transform: translate(-3px, -3px);
 }
 
 .fknt-accordion .accordion-button {
     background: var(--light);
-    color: var(--fknt-red);
-    font-weight: bold;
-    font-size: 1.3rem;
-    padding: 12px 20px;
-    border-radius: 12px;
-    position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px var(--shadow);
+    color: var(--ink);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 1.12rem;
+    padding: 18px 22px;
+    box-shadow: none;
+    transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 .fknt-accordion .accordion-button:not(.collapsed) {
     background: var(--fknt-red);
     color: var(--light);
-    border-radius: 12px 12px 0 0;
+    border-bottom: var(--border-w) solid var(--ink);
 }
 
-.fknt-accordion .accordion-button:hover {
-    box-shadow: 0 4px 12px var(--shadow);
-    transform: translateY(-2px);
-}
+.fknt-accordion .accordion-button:hover { background-color: var(--fknt-light); }
+
+.fknt-accordion .accordion-button:not(.collapsed):hover { background-color: var(--fknt-red); }
 
 .fknt-accordion .accordion-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(209, 12, 12, 0.2);
+    box-shadow: inset 0 0 0 3px var(--ink);
 }
 
 .fknt-accordion .accordion-button::after {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 15.5l-6-6 1.41-1.41L12 12.67l4.59-4.58L18 9.5l-6 6z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23131010" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>');
     background-size: contain;
-    width: 1.5em;
-    height: 1.5em;
-    transition: transform 0.3s ease;
+    width: 1.3em;
+    height: 1.3em;
+    transition: transform 0.3s var(--ease);
 }
 
 .fknt-accordion .accordion-button:not(.collapsed)::after {
     transform: rotate(180deg);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>');
 }
 
 .fknt-accordion .accordion-body {
-    background: var(--fknt-light);
-    border-radius: 0 0 12px 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--paper);
+    padding: 24px;
 }
 
 /* Формула та примітки */
 .fknt-formula {
-    background-color: var(--fknt-light);
-    border: 2px dashed var(--fknt-red);
-    border-radius: 10px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    transition: transform 0.3s ease;
-    overflow: hidden;
+    background-color: var(--light);
+    border: var(--border-w) dashed var(--ink);
+    border-radius: var(--radius);
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease);
 }
 
-.fknt-formula:hover {
-    transform: scale(1.03);
-}
+.fknt-formula:hover { transform: translate(-3px, -3px); box-shadow: var(--hard); }
 
 /* Блоки гуртожитків */
 .fknt-dorm-block {
@@ -378,42 +594,40 @@ h1, h2, h5 {
     flex-direction: column;
     justify-content: space-between;
     min-height: 160px;
-    background-color: var(--fknt-light);
-    border: 2px dashed var(--fknt-red);
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--light);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    font-size: 1.05rem;
+    font-weight: 600;
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     overflow: hidden;
     position: relative;
 }
 
-.fknt-dorm-block:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 12px var(--shadow);
-}
+.fknt-dorm-block h6 { color: var(--fknt-red); }
 
-.fknt-dorm-block:hover::before {
-    opacity: 1;
+.fknt-dorm-block:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
 /* Зображення */
 .fknt-image {
-    border-radius: 15px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     overflow: hidden;
     cursor: pointer;
 }
 
 .fknt-image:hover {
-    transform: scale(1.03);
-    opacity: 0.9;
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
 }
 
-/* Контейнер для галереї */
-.org-gallery {
-    margin-top: 20px;
-}
+.org-gallery { margin-top: 20px; }
 
 .org-gallery .row {
     display: flex;
@@ -425,42 +639,129 @@ h1, h2, h5 {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border: 2px solid var(--fknt-red);
-    border-radius: 10px;
-    box-shadow: 0 2px 8px var(--shadow);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--hard-sm);
 }
 
-/* Підписи до зображень */
 .gallery-caption {
     font-size: 1rem;
-    color: #000000;
+    color: var(--ink);
     text-align: center;
     margin-top: 10px;
-    font-weight: 500;
+    font-weight: 600;
+    opacity: 0.8;
 }
 
-/* Модальне вікно */
+/* Примітки */
+.fknt-note-card {
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    background-color: var(--light);
+    box-shadow: var(--hard-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    padding: 20px;
+    text-align: center;
+}
+
+.fknt-note-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--hard);
+}
+
+.fknt-note-card .card-title {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    color: var(--ink);
+    font-weight: 500;
+    text-align: center;
+}
+
+.fknt-note-card .note-label { font-weight: 800; color: var(--fknt-red); }
+.fknt-note-card .faq-icon { font-size: 1.4rem; margin-right: 10px; }
+
+/* =========================================================
+   ТАБИ (faq.html)
+   ========================================================= */
+.nav-tabs {
+    border-bottom: none;
+    gap: 12px;
+    display: flex;
+    width: 100%;
+}
+
+.nav-tabs .nav-item {
+    flex: 1;
+    display: flex;
+}
+
+.nav-tabs .nav-item:first-child { justify-content: flex-end; }
+.nav-tabs .nav-item:last-child { justify-content: flex-start; }
+
+.nav-tabs .nav-link {
+    color: var(--ink);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 1rem;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
+    padding: 10px 22px;
+    margin: 0;
+    background-color: var(--light);
+    box-shadow: var(--hard-sm);
+    transition: all 0.15s var(--ease);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--fknt-red);
+    color: var(--light);
+    border-color: var(--ink);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--hard);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background-color: var(--fknt-light);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--hard);
+}
+
+.nav-tabs .nav-link:focus { outline: none; }
+
+/* =========================================================
+   МОДАЛЬНЕ ВІКНО
+   ========================================================= */
 .fknt-modal {
-    border: none; /* Прибираємо рамку */
-    background-color: rgba(0, 0, 0, 0.3); /* Дуже прозорий чорний фон */
-    box-shadow: none; /* Прибираємо тінь для чистого вигляду */
+    border: none;
+    background-color: rgba(19, 16, 16, 0.85);
+    box-shadow: none;
 }
 
 .fknt-modal .btn-close {
-    filter: invert(1); /* Біла кнопка закриття */
+    filter: invert(1);
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 16px;
+    right: 16px;
     z-index: 1050;
+    background-color: var(--fknt-red);
+    border: 2px solid var(--light);
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 1;
+    transition: transform 0.2s var(--ease);
 }
 
+.fknt-modal .btn-close:hover { transform: rotate(90deg) scale(1.1); }
+
 .fknt-modal .modal-body {
-    padding: 0; /* Без відступів */
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Повна висота екрана */
-    background-color: transparent; /* Прозорий фон */
+    height: 100vh;
+    background-color: transparent;
 }
 
 .fknt-modal .modal-image {
@@ -468,248 +769,94 @@ h1, h2, h5 {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain; /* Зберігаємо пропорції */
-    border: 2px solid var(--fknt-red);
-    border-radius: 10px;
+    object-fit: contain;
+    border: var(--border-w) solid var(--light);
+    border-radius: var(--radius);
+    box-shadow: 10px 10px 0 rgba(209, 12, 12, 0.6);
 }
 
-/* Контакти у футері */
+/* =========================================================
+   ФУТЕР
+   ========================================================= */
+footer.bg-fknt-dark {
+    position: relative;
+    background: var(--ink) !important;
+    border-top: var(--border-w) solid var(--fknt-red);
+}
+
 .footer-contact {
     color: var(--light);
-    text-decoration: underline;
-    font-weight: 600;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.95rem;
     position: relative;
-    padding-right: 20px;
-    transition: all 0.3s ease;
+    padding: 8px 24px 8px 14px;
+    border: 2px solid var(--light);
+    border-radius: 999px;
+    display: inline-block;
+    margin-top: 6px;
+    transition: all 0.2s var(--ease);
 }
 
 .footer-contact:hover {
-    color: var(--light);
+    color: var(--ink);
     background-color: var(--fknt-red);
-    border-radius: 5px;
-    text-decoration: none;
+    border-color: var(--fknt-red);
 }
 
 .footer-contact::after {
     content: ' ✈️';
     position: absolute;
-    right: 5px;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
-.footer-contact:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) rotate(45deg);
-}
+.footer-contact:hover::after { opacity: 1; transform: translateY(-50%) rotate(45deg); }
 
-/* Адаптивність */
+/* =========================================================
+   АДАПТИВНІСТЬ
+   ========================================================= */
 @media (max-width: 768px) {
-    .logo {
-        height: 50px;
-    }
-
-    .hero {
-        padding: 60px 0;
-        background-attachment: scroll;
-    }
-
-    h1.display-3 {
-        font-size: 2.2rem;
-    }
-
-    .btn-fknt-red {
-        padding: 10px 20px;
-    }
-
-    .fknt-card:hover {
-        transform: scale(1.02);
-    }
-
-    .navbar-nav .contact-link {
-        padding-right: 15px;
-        font-size: 1rem;
-    }
-
-    .footer-contact {
-        font-size: 0.9rem;
-    }
-
-    .plane-icon {
-        height: 1em;
-    }
-
-    .info-text {
-        font-size: 1.1rem;
-    }
-
-    .learning-text {
-        font-size: 1.1rem;
-    }
-
-    .fknt-accordion .accordion-button {
-        font-size: 1.1rem;
-        border-radius: 10px;
-        padding: 10px 15px;
-    }
-
-    .fknt-accordion .accordion-button:not(.collapsed) {
-        border-radius: 10px 10px 0 0;
-    }
-
-    .fknt-accordion .accordion-body {
-        border-radius: 0 0 10px 10px;
-        padding: 15px;
-    }
-
-    .fknt-formula {
-        font-size: 1.1rem;
-    }
-
-    .fknt-dorm-block {
-        min-height: 200px;
-        font-size: 1rem;
-    }
-
-    .btn-learning {
-        font-size: 1.2rem;
-    }
-
-    .faq-card {
-        min-height: 250px;
-        padding: 15px;
-    }
-
-    .faq-card .card-title {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .faq-card .card-text {
-        font-size: 1rem;
-        line-height: 1.4;
-        text-align: justify;
-    }
-
-    .faq-icon {
-        font-size: 1.2rem;
-        margin-right: 8px;
-    }
-
-    .org-main-logo, .org-logo {
-        max-width: 80px;
-    }
-
-    .org-gallery img {
-        max-width: 100%;
-    }
-
-    .gallery-caption {
-        font-size: 0.9rem;
-    }
-
-    .fknt-modal .modal-body {
-        height: 100vh; /* Повна висота на мобільних */
-    }
-}
-
-/* Стилі для табів */
-.nav-tabs {
-    border-bottom: none;
-}
-
-.nav-tabs .nav-link {
-    color: var(--fknt-dark);
-    font-weight: 600;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 24px;
-    margin: 0 10px;
-    background-color: var(--fknt-light);
-    transition: all 0.3s ease;
-}
-
-.nav-tabs .nav-link.active {
-    background-color: var(--fknt-red);
-    color: var(--light);
-    box-shadow: 0 4px 12px var(--shadow);
-}
-
-.nav-tabs .nav-link:hover {
-    background-color: var(--fknt-red);
-    color: var(--light);
-    box-shadow: 0 4px 12px var(--shadow);
-    transform: scale(1.05);
-}
-
-.nav-tabs .nav-link:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(209, 12, 12, 0.2);
-}
-
-/* Картки для приміток */
-.fknt-note-card {
-    border: 2px dashed var(--fknt-red);
-    border-radius: 20px;
-    background-color: var(--fknt-light);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.fknt-note-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow);
-    background-color: var(--light);
-}
-
-.fknt-note-card .card-title {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    margin-bottom: 0;
-    color: #000;
-    font-weight: 400;
-    text-align: center;
-}
-
-.fknt-note-card .note-label {
-    font-weight: 700;
-    color: var(--fknt-red);
-}
-
-.fknt-note-card .faq-icon {
-    font-size: 1.5rem;
-    margin-right: 10px;
-}
-
-/* Адаптивність для карток приміток */
-@media (max-width: 768px) {
-    .fknt-note-card {
-        padding: 15px;
-    }
-
-    .fknt-note-card .card-title {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        text-align: center;
-    }
-
-    .fknt-note-card .faq-icon {
-        font-size: 1.2rem;
-        margin-right: 8px;
-    }
+    .logo { height: 46px; }
+    .hero { padding: 80px 0 60px; }
+    h1.display-3 { font-size: 2.1rem; }
+    .btn-fknt-red, .btn-outline-fknt-red { padding: 10px 20px; }
+    .navbar-nav .contact-link { font-size: 0.8rem; padding: 8px 12px !important; }
+    .footer-contact { font-size: 0.85rem; }
+    .plane-icon { height: 1em; }
+    .info-text { font-size: 1.05rem; }
+    .learning-text { font-size: 1.05rem; }
+    .fknt-accordion .accordion-button { font-size: 1rem; padding: 14px 16px; }
+    .fknt-formula { font-size: 1.05rem; }
+    .fknt-dorm-block { min-height: 180px; font-size: 0.98rem; }
+    .btn-learning { font-size: 1.1rem; }
+    .faq-card { min-height: 220px; padding: 16px; }
+    .faq-card .card-title { font-size: 1.15rem; margin-bottom: 10px; }
+    .faq-card .card-text { font-size: 0.98rem; line-height: 1.5; }
+    .faq-icon { font-size: 1.2rem; margin-right: 8px; }
+    .org-main-logo, .org-logo { max-width: 80px; }
+    .gallery-caption { font-size: 0.9rem; }
+    .fknt-note-card { padding: 15px; }
+    .fknt-note-card .card-title { font-size: 1.05rem; }
+    .nav-tabs { gap: 8px; }
+    .nav-tabs .nav-link { font-size: 0.85rem; padding: 8px 14px; }
+    section h2.text-fknt-red { font-size: 1.4rem; padding: 5px 14px; }
 }
 
 @media (max-width: 768px) {
-    .org-logo {
-        float: none; /* Вимикаємо обтікання */
-        margin: 0 auto 15px; /* Центруємо логотип */
-        display: block; /* Робимо логотип блоковим */
-    }
+    .org-logo { float: none; margin: 0 auto 15px; display: block; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
