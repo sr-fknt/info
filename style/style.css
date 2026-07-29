@@ -110,7 +110,7 @@ body {
     box-shadow: var(--hard-sm);
     background: var(--light);
     padding: 8px;
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .org-main-logo:hover {
@@ -290,7 +290,7 @@ body {
     display: inline-block;
 }
 
-/* .plane-icon:hover { transform: rotate(-25deg) translateY(-3px) scale(1.2); } */
+.plane-icon:hover { transform: rotate(-25deg) translateY(-3px) scale(1.2); }
 
 /* Заголовки */
 h1, h2, h5 {
@@ -325,7 +325,7 @@ section h2.text-fknt-red {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
-    transition: background-color 0.2s var(--ease);
+    transition: background-color 0.3s var(--ease);
 }
 
 .hyperlink:hover { background-color: #ffe3e3; }
@@ -343,7 +343,7 @@ section h2.text-fknt-red {
     padding: 12px 26px;
     border-radius: var(--radius-sm);
     box-shadow: var(--hard);
-    transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .btn-fknt-red:hover {
@@ -369,7 +369,7 @@ section h2.text-fknt-red {
     border-radius: var(--radius-sm);
     padding: 10px 22px;
     box-shadow: var(--hard-sm);
-    transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background-color 0.15s var(--ease), color 0.15s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 .btn-outline-fknt-red:hover {
@@ -411,7 +411,7 @@ section h2.text-fknt-red {
     border-radius: var(--radius);
     background-color: var(--light);
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     overflow: hidden;
     position: relative;
 }
@@ -458,7 +458,7 @@ section h2.text-fknt-red {
     background-color: var(--light);
     border-radius: var(--radius);
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     min-height: 200px;
     padding: 22px;
 }
@@ -491,7 +491,7 @@ section h2.text-fknt-red {
     border-radius: var(--radius-sm);
     background: var(--light);
     padding: 4px;
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     float: left;
     shape-outside: inset(0);
     box-shadow: var(--hard-sm);
@@ -505,7 +505,7 @@ section h2.text-fknt-red {
     border-radius: var(--radius);
     margin-top: 15px;
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .org-image:hover { transform: translate(-3px, -3px); box-shadow: var(--hard); }
@@ -521,13 +521,18 @@ section h2.text-fknt-red {
     margin-bottom: 18px;
     border-radius: var(--radius);
     box-shadow: var(--hard-sm);
-    transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+    transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
     overflow: hidden;
 }
 
 .fknt-accordion .accordion-item:hover {
     box-shadow: var(--hard);
     transform: translate(-3px, -3px);
+}
+
+.fknt-accordion .accordion-item:has(.collapsing) {
+    transform: none;
+    box-shadow: var(--hard-sm);
 }
 
 .fknt-accordion .accordion-button {
@@ -539,13 +544,14 @@ section h2.text-fknt-red {
     font-size: 1.12rem;
     padding: 18px 22px;
     box-shadow: none;
-    transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+    transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 .fknt-accordion .accordion-button:not(.collapsed) {
     background: var(--fknt-red);
     color: var(--light);
     border-bottom: var(--border-w) solid var(--ink);
+    box-shadow: none;
 }
 
 .fknt-accordion .accordion-button:hover { background-color: var(--fknt-light); }
@@ -553,6 +559,11 @@ section h2.text-fknt-red {
 .fknt-accordion .accordion-button:not(.collapsed):hover { background-color: var(--fknt-red); }
 
 .fknt-accordion .accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.fknt-accordion .accordion-button:focus-visible {
     outline: none;
     box-shadow: inset 0 0 0 3px var(--ink);
 }
@@ -583,7 +594,7 @@ section h2.text-fknt-red {
     font-size: 1.2rem;
     font-weight: 700;
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease);
+    transition: transform 0.3s var(--ease);
 }
 
 .fknt-formula:hover { transform: translate(-3px, -3px); box-shadow: var(--hard); }
@@ -600,7 +611,7 @@ section h2.text-fknt-red {
     font-size: 1.05rem;
     font-weight: 600;
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     overflow: hidden;
     position: relative;
 }
@@ -617,7 +628,7 @@ section h2.text-fknt-red {
     border: var(--border-w) solid var(--ink);
     border-radius: var(--radius);
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     overflow: hidden;
     cursor: pointer;
 }
@@ -659,7 +670,7 @@ section h2.text-fknt-red {
     border-radius: var(--radius);
     background-color: var(--light);
     box-shadow: var(--hard-sm);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     padding: 20px;
     text-align: center;
 }
@@ -711,7 +722,7 @@ section h2.text-fknt-red {
     margin: 0;
     background-color: var(--light);
     box-shadow: var(--hard-sm);
-    transition: all 0.15s var(--ease);
+    transition: all 0.3s var(--ease);
 }
 
 .nav-tabs .nav-link.active {
@@ -729,6 +740,10 @@ section h2.text-fknt-red {
 }
 
 .nav-tabs .nav-link:focus { outline: none; }
+
+.tab-pane.fade {
+    transition: opacity 0.35s var(--ease);
+}
 
 /* =========================================================
    МОДАЛЬНЕ ВІКНО
@@ -750,7 +765,7 @@ section h2.text-fknt-red {
     border-radius: 50%;
     padding: 10px;
     opacity: 1;
-    transition: transform 0.2s var(--ease);
+    transition: transform 0.3s var(--ease);
 }
 
 .fknt-modal .btn-close:hover { transform: rotate(90deg) scale(1.1); }
@@ -797,7 +812,7 @@ footer.bg-fknt-dark {
     border-radius: 999px;
     display: inline-block;
     margin-top: 6px;
-    transition: all 0.2s var(--ease);
+    transition: all 0.3s var(--ease);
 }
 
 .footer-contact:hover {
@@ -813,7 +828,7 @@ footer.bg-fknt-dark {
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
-    transition: opacity 0.2s, transform 0.2s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .footer-contact:hover::after { opacity: 1; transform: translateY(-50%) rotate(45deg); }
@@ -843,7 +858,19 @@ footer.bg-fknt-dark {
     .gallery-caption { font-size: 0.9rem; }
     .fknt-note-card { padding: 15px; }
     .fknt-note-card .card-title { font-size: 1.05rem; }
-    .nav-tabs { gap: 8px; }
+    .nav-tabs {
+        gap: 8px;
+        width: fit-content;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    .nav-tabs .nav-item {
+        flex: none;
+    }
+    .nav-tabs .nav-item:first-child,
+    .nav-tabs .nav-item:last-child {
+        justify-content: center;
+    }
     .nav-tabs .nav-link { font-size: 0.85rem; padding: 8px 14px; }
     section h2.text-fknt-red { font-size: 1.4rem; padding: 5px 14px; }
 }
