@@ -34,7 +34,7 @@ html {
     --hard-sm: 4px 4px 0 var(--ink);
     --hard-hover: 10px 10px 0 var(--ink);
     --hard-red: 7px 7px 0 var(--fknt-red);
-    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body {
@@ -164,34 +164,7 @@ body {
     border-bottom: var(--border-w) solid var(--fknt-red);
 }
 
-.hero::before {
-    /* плоске 2D "конфеті": кола + зірочки різного розміру, повільно дрейфують */
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background-image:
-        radial-gradient(circle, var(--fknt-red) 40%, transparent 41%),
-        radial-gradient(circle, var(--light) 40%, transparent 41%),
-        radial-gradient(circle, var(--fknt-red) 40%, transparent 41%),
-        radial-gradient(circle, var(--light) 40%, transparent 41%),
-        radial-gradient(circle, var(--fknt-red) 40%, transparent 41%);
-    background-repeat: no-repeat;
-    background-size: 14px 14px, 10px 10px, 8px 8px, 12px 12px, 9px 9px;
-    background-position:
-        8% 22%,
-        18% 68%,
-        88% 30%,
-        78% 78%,
-        50% 12%;
-    opacity: 0.55;
-    pointer-events: none;
-    animation: confettiDrift 9s ease-in-out infinite alternate;
-}
 
-@keyframes confettiDrift {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(10px, -14px); }
-}
 
 
 
@@ -220,7 +193,14 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hero::after { width: 3.6rem; height: 3.6rem; font-size: 2rem; right: 5%; top: 10%; }
+    .hero::after {
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.5rem;
+        right: 12px;
+        top: 12px;
+        outline-offset: 4px;
+    }
 }
 
 @keyframes badgeWobble {
@@ -290,7 +270,7 @@ body {
     display: inline-block;
 }
 
-.plane-icon:hover { transform: rotate(-25deg) translateY(-3px) scale(1.2); }
+/* .plane-icon:hover { transform: rotate(-25deg) translateY(-3px) scale(1.2); } */
 
 /* Заголовки */
 h1, h2, h5 {
